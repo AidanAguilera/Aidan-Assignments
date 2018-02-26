@@ -6,6 +6,9 @@ var methodOverride = require('method-override');
 var hostname = process.env.HOSTNAME || 'localhost';
 var port = 1234;
 
+
+
+
 app.get("/", function (req, res) {
     res.send(req.query);
 });
