@@ -15,8 +15,8 @@
       width: calc(97% - 240px);
       min-height: 100%;
       background: lightseagreen;
-      text-align: center;
-      padding: 1px;
+      text-align:center;
+      padding: 1px
     }
   </style>
   <script>
@@ -27,7 +27,6 @@
       $("#result").val(resData);
     });
   }
-
   var currRSSData = null;
   function changeRSSSrc()
   {
@@ -51,18 +50,18 @@
       $("#theList").html(markup);
     });
   }
-
   function itemSelected(n)
   {
     var data = currRSSData[n];
-    var markup = JSON.stringify(data);
-    var thumbnail =data.artworkUrl100 || "";
-    var name =data.name || "";
+    var markup = "";
+    var thumbnail = data.artworkUrl100 || "";
+    var name = data.name || "";
+    var link = data.url || "";
     console.log(data);
-
     markup += "<img src='" + thumbnail + "'>";
-
+    markup += "<a target='_blank' href='" + link+ "'><h1>" + name+ "</h1></a>";
     $("#theDetails").html(markup);
+    //document.getElementById("theDetails").innerHTML = markup;
   }
   </script>
 
