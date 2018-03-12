@@ -15,6 +15,7 @@
       width: calc(97% - 240px);
       min-height: 100%;
       background: lightseagreen;
+      text-align: center;
       padding: 1px;
     }
   </style>
@@ -32,6 +33,10 @@
   {
     var feedURL = prompt("Enter your RSS feed URL:");
     var url = "./getFeedData?url=" + feedURL;
+    loadRSS(url);
+  }
+  function loadRSS(url){
+    console.log(url);
     loadFile(url, function(resData){
       currRSSData = JSON.parse(resData).feed.results;
       //var markup = resData;
@@ -51,6 +56,12 @@
   {
     var data = currRSSData[n];
     var markup = JSON.stringify(data);
+    var thumbnail =data.artworkUrl100 || "";
+    var name =data.name || "";
+    console.log(data);
+
+    markup += "<img src='" + thumbnail + "'>";
+
     $("#theDetails").html(markup);
   }
   </script>
