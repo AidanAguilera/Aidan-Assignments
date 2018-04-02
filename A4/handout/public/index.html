@@ -134,7 +134,8 @@
     var currName = currRSSFeedList[n].name;
     var id = currRSSFeedList[n].id;
     var imgURL = currRSSFeedList[n].url;
-    alert(imgURL);
+    var markup = "<img src='" + imgURL + "'>";
+    $("#theDetails").html(markup);
   }
   function start()
   {
