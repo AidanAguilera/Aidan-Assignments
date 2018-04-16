@@ -148,6 +148,10 @@ body{
     }
   </style>
   <script>
+  function goBackToMain()
+  {
+    $(theImageList).removeClass("hiddeninSmall")
+  }
   function renameClicked(n){
     var currName = currRSSFeedList[n].name;
     var id = currRSSFeedList[n].id;
