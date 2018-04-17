@@ -152,6 +152,13 @@ body{
   {
     $(theImageList).removeClass("hiddeninSmall")
   }
+
+  function goBackToList()
+  {
+    $("#theDetails").addClass("hiddeninall");
+    $("#allImagesWrapper").removeClass("hiddeninSmall");
+    setTimeout(function(){$("#theList button").removeClass("active")}, 1000);
+  }
   function renameClicked(n){
     var currName = currRSSFeedList[n].name;
     var id = currRSSFeedList[n].id;
